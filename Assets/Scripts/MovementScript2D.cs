@@ -33,7 +33,8 @@ public class MovementScript2D : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField]private float jumpForce;
-    public bool grounded;
+    [SerializeField]private LayerMask layerMask;
+    [SerializeField]private bool grounded;
 
     [Header("References")]
     [SerializeField]private Rigidbody2D rb;
@@ -60,7 +61,8 @@ public class MovementScript2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.Raycast(transform.position, Vector3.down, playerHeight * 0.5f);
+        Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
+        grounded = Physics2D.Raycast(currentPos, Vector2.down, playerHeight * 0.5f + 0.3f, layerMask);
 
         StateHandler();
         GetInput();
@@ -92,7 +94,7 @@ public class MovementScript2D : MonoBehaviour
     }
 
     private void Move(){
-        Vector3 direction = transform.right * horizontalInput;
+        Vector2 direction = transform.right * horizontalInput;
         
         if (grounded){
             rb.AddForce(direction.normalized * moveSpeed * 10f, ForceMode2D.Force);
@@ -123,15 +125,15 @@ public class MovementScript2D : MonoBehaviour
 
     private void VelocityYHandler(){
         if (rb.linearVelocity.y > maxYVelocity){
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, maxYVelocity);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxYVelocity);
         }
     }
 
     
 
     private void Jump(){
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0);
-        rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void GetInput(){
@@ -153,12 +155,12 @@ public class MovementScript2D : MonoBehaviour
         }
 
         if (Input.GetKeyDown(crouchKey)){
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode2D.Impulse);
+            transform.localScale = new Vector2(transform.localScale.x, crouchYScale);
+            rb.AddForce(Vector2.down * 5f, ForceMode2D.Impulse);
         }
 
         if (Input.GetKeyUp(crouchKey)){
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            transform.localScale = new Vector2(transform.localScale.x, startYScale);
         }
     }
 }

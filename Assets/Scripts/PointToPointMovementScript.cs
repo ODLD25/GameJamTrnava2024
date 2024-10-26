@@ -16,7 +16,7 @@ public class PointToPointMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, maxSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, maxSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, target.position) < 0.5f){
             if (target == pointA){

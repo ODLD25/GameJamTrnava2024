@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float soulTime;
     private float soulTimer;
     [SerializeField]private bool soulCamera;
+    
+    private GameObject playerManager;
 
     private void Awake() {
         soulTimer = soulTime;
@@ -44,6 +46,7 @@ public class CameraController : MonoBehaviour
             Camera.main.transform.rotation = sideViewCameraRot;
             soulCamera = false;
             soulTimer = soulTime;
+            playerManager.GetComponent<PlayerManager>().soulView = soulCamera;
         }
         else {
             Camera.main.transform.position = soulCameraPos;
@@ -52,6 +55,7 @@ public class CameraController : MonoBehaviour
             Camera.main.transform.rotation = soulCameraRot;
             soulCamera = true;
             soulTimer = soulTime;
+            playerManager.GetComponent<PlayerManager>().soulView = soulCamera;
         }
     } 
 }
