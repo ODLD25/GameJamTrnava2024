@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovementScript2D : MonoBehaviour
@@ -64,6 +65,8 @@ public class MovementScript2D : MonoBehaviour
         Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
         grounded = Physics2D.Raycast(currentPos, Vector2.down, playerHeight * 0.5f + 0.3f, layerMask);
 
+        GetComponent<Animator>().SetBool("isJumping", !grounded);
+
         StateHandler();
         GetInput();
         DragHandler();
@@ -73,6 +76,15 @@ public class MovementScript2D : MonoBehaviour
 
     private void FixedUpdate() {
         Move();
+    }
+    
+    private void OnBecameInvisible() {
+        Debug.Log("-");
+
+        if (!Camera.main.GetComponent<CameraController>().soulPlayer){
+            Debug.Log("Game Over");
+            GameObject.Find("PlayerManager").GetComponent<PlayerManager>().Die();
+        }
     }
 
     private void StateHandler(){
@@ -121,6 +133,9 @@ public class MovementScript2D : MonoBehaviour
 
             rb.linearVelocity = new Vector2(fixedVelocity.x, rb.linearVelocity.y);
         }
+
+        Vector2 velocity = new Vector2(rb.linearVelocity.x, 0);
+        GetComponent<Animator>().SetFloat("Speed", velocity.magnitude);
     }
 
     private void VelocityYHandler(){
@@ -139,6 +154,13 @@ public class MovementScript2D : MonoBehaviour
     private void GetInput(){
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput < 0f){
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else{
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
 
         if (Input.GetKeyDown(jumpKey)){
             if (grounded){

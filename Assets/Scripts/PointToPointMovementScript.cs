@@ -9,8 +9,13 @@ public class PointToPointMovementScript : MonoBehaviour
     [SerializeField]private Transform target;
     [SerializeField]private float maxSpeed;
 
+    [SerializeField]private bool dealSpeedDamage;
+
+    [SerializeField]private Vector3 pos, velocity;
+
     private void Awake() {
         target = pointA;
+        pos = transform.position;
     }
 
     // Update is called once per frame
@@ -26,5 +31,16 @@ public class PointToPointMovementScript : MonoBehaviour
                 target = pointA;
             }
         }
+
+        velocity = (transform.position - pos) / Time.deltaTime;
+        pos = transform.position;
+
+        transform.LookAt(target);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        /*if (other.gameObject.tag == "Player"){
+            float damage = 
+        }*/
     }
 }
