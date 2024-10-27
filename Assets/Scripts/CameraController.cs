@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,14 +14,14 @@ public class CameraController : MonoBehaviour
     [SerializeField]private Vector3 soulCameraPos;
     [SerializeField]private Quaternion soulCameraRot;
     [SerializeField]private GameObject soulParent;
-    public GameObject soulPlayer;
+    [SerializeField]private GameObject soulPlayer;
     [SerializeField]private float soulTime;
 
     [Header("IDK")]
     [SerializeField]private GameObject background;
     [SerializeField]private float cameraMoveSpeed;
     private float soulTimer;
-    [SerializeField]private bool soulCamera;
+    public bool soulCamera;
     private GameObject playerManager;
 
     private void Awake() {
@@ -45,11 +46,11 @@ public class CameraController : MonoBehaviour
         }
         
         if (Camera.main.transform.position.x >= sidePlayer.transform.position.x && !soulCamera){
-            Vector3 cameraPos = new Vector3(transform.position.x + (cameraMoveSpeed * Time.deltaTime), transform.position.y, transform.position.z);   
+            Vector3 cameraPos = new Vector3(transform.position.x + (cameraMoveSpeed * Time.deltaTime), 0, transform.position.z);   
             transform.position = cameraPos;
         }
         else if (!soulCamera){
-            Vector3 cameraPos = new Vector3(sidePlayer.transform.position.x, transform.position.y, transform.position.z);   
+            Vector3 cameraPos = new Vector3(sidePlayer.transform.position.x, 0, transform.position.z);   
             transform.position = cameraPos;
         }
 
@@ -62,25 +63,27 @@ public class CameraController : MonoBehaviour
 
     private void ChangeCamera(){
         if (soulCamera){
+            soulCamera = false;
+
             Camera.main.transform.position = sideViewCameraPos;
             Camera.main.transform.rotation = sideViewCameraRot;
 
             sideParent.SetActive(true);
             soulParent.SetActive(false);
 
-            soulCamera = false;
             soulTimer = soulTime;
 
             playerManager.GetComponent<PlayerManager>().soulView = soulCamera;
         }
         else {
+            soulCamera = true;
+
             Camera.main.transform.position = new Vector3(sidePlayer.transform.position.x, soulCameraPos.y, soulCameraPos.z);
             Camera.main.transform.rotation = soulCameraRot;
 
             sideParent.SetActive(false);
             soulParent.SetActive(true);
 
-            soulCamera = true;
             soulTimer = soulTime;
             
             playerManager.GetComponent<PlayerManager>().soulView = soulCamera;

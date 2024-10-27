@@ -79,9 +79,7 @@ public class MovementScript2D : MonoBehaviour
     }
     
     private void OnBecameInvisible() {
-        Debug.Log("-");
-
-        if (!Camera.main.GetComponent<CameraController>().soulPlayer){
+        if (!Camera.main.GetComponent<CameraController>().soulCamera){
             Debug.Log("Game Over");
             GameObject.Find("PlayerManager").GetComponent<PlayerManager>().Die();
         }
@@ -143,8 +141,6 @@ public class MovementScript2D : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxYVelocity);
         }
     }
-
-    
 
     private void Jump(){
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
