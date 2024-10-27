@@ -65,7 +65,7 @@ public class CameraController : MonoBehaviour
         road.transform.position = roadPos;
     }
 
-    private void ChangeCamera(){
+    public void ChangeCamera(){
         if (soulCamera){
             soulCamera = false;
 
