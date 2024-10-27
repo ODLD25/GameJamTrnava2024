@@ -18,7 +18,14 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float soulTime;
     [SerializeField]private float camSpeed;
 
+    [Header("Mouse")]
+    private float mouseY;
+    private float mouseX;
+    [SerializeField]private float yRot;
+    [SerializeField]private float xRot;
+
     [Header("IDK")]
+    [SerializeField]private GameObject camHolder;
     [SerializeField]private GameObject background;
     [SerializeField]private GameObject road;
     [SerializeField]private float cameraMoveSpeed;
@@ -64,17 +71,37 @@ public class CameraController : MonoBehaviour
 
         Vector3 roadPos = new Vector3(sidePlayer.transform.position.x, road.transform.position.y, road.transform.position.z);
         road.transform.position = roadPos;
+
+        if (soulCamera){
+            GetMouseInput();
+            Rotate();
+        }
+    }
+
+    private void GetMouseInput(){
+        mouseX = Input.GetAxis("Mouse X");
+        mouseY = Input.GetAxis("Mouse Y");
+
+        yRot += mouseX;
+        xRot -= mouseY;
+    }
+
+    private void Rotate(){
+        transform.rotation = Quaternion.Euler(xRot, yRot, 0);
+        soulPlayer.transform.rotation = Quaternion.Euler(xRot, yRot, 0);
+        transform.position = soulPlayer.transform.position;
     }
 
     public void ChangeCamera(){
         if (soulCamera){
             soulCamera = false;
 
-            Camera.main.transform.position = sideViewCameraPos;
-            Camera.main.transform.rotation = sideViewCameraRot;
-
             sideParent.SetActive(true);
             soulParent.SetActive(false);
+
+            Camera.main.transform.localPosition = sideViewCameraPos;
+            Camera.main.transform.rotation = sideViewCameraRot;
+            Camera.main.transform.parent = null;
 
             soulTimer = soulTime;
 
@@ -83,11 +110,18 @@ public class CameraController : MonoBehaviour
         else{
             soulCamera = true;
 
-            Camera.main.transform.position = new Vector3(sidePlayer.transform.position.x, soulCameraPos.y, soulCameraPos.z);
-            Camera.main.transform.rotation = soulCameraRot;
-
             sideParent.SetActive(false);
             soulParent.SetActive(true);
+
+            /*Camera.main.transform.position = new Vector3(sidePlayer.transform.position.x, soulCameraPos.y, soulCameraPos.z);
+            Camera.main.transform.rotation = soulCameraRot;*/
+            /*Camera.main.transform.position = Vector3.zero;
+            Camera.main.transform.rotation = soulCameraRot;*/
+            //Camera.main.transform.parent = camHolder.transform;
+            //Camera.main.transform.position = Vector3.zero;
+            //Camera.main.transform.rotation = soulCameraRot;
+            
+            soulPlayer.transform.position = new Vector3(-15f, 2f, 21f);
 
             soulTimer = soulTime;
             

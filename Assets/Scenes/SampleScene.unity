@@ -7346,11 +7346,15 @@ MonoBehaviour:
   sideViewCameraRot: {x: 0, y: 0, z: 0, w: 0}
   sideParent: {fileID: 1663620819}
   sidePlayer: {fileID: 1864741949}
-  soulCameraPos: {x: 0, y: 7, z: -8}
+  soulCameraPos: {x: -2.644116, y: 4.76732, z: -7.090931}
   soulCameraRot: {x: 0.3007058, y: 0, z: 0, w: 0.95371693}
   soulParent: {fileID: 1393145744}
-  soulPlayer: {fileID: 0}
+  soulPlayer: {fileID: 2073220807}
   soulTime: 120
+  camSpeed: 0
+  yRot: 0
+  xRot: 0
+  camHolder: {fileID: 2133483395}
   background: {fileID: 807809025}
   road: {fileID: 676673321}
   cameraMoveSpeed: 1
@@ -42005,6 +42009,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7812578842648880984, guid: 073897ff09c37464f9159ac7f8385bfc, type: 3}
   m_PrefabInstance: {fileID: 2133329967}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2133483395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7301786522074283340, guid: e0e8887520de36940a35003a866bbd7a, type: 3}
+  m_PrefabInstance: {fileID: 1601500016906447992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2134034356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42288,15 +42297,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2153121378028297684, guid: e0e8887520de36940a35003a866bbd7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6009555
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2153121378028297684, guid: e0e8887520de36940a35003a866bbd7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.663
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2153121378028297684, guid: e0e8887520de36940a35003a866bbd7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2153121378028297684, guid: e0e8887520de36940a35003a866bbd7a, type: 3}
       propertyPath: m_LocalRotation.w

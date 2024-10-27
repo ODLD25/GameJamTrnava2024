@@ -15,7 +15,7 @@ public class ObstacleRandomSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instantiate(obstacles[Random.Range(0, obstacles.Count)], startSpawnPos.position, Quaternion.identity);
+        Instantiate(obstacles[Random.Range(0, obstacles.Count)], startSpawnPos.position, Quaternion.identity, parent.transform.parent);
         lastObstacle = startSpawnPos.transform.position;
 
         InvokeRepeating(nameof(SpawnObstacles), 2, 2);
