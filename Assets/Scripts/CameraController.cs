@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]private GameObject soulParent;
     [SerializeField]private GameObject soulPlayer;
     [SerializeField]private float soulTime;
+    [SerializeField]private float camSpeed;
 
     [Header("IDK")]
     [SerializeField]private GameObject background;
