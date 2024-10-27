@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PhysicMovementScript : MonoBehaviour
@@ -41,6 +42,7 @@ public class PhysicMovementScript : MonoBehaviour
 
     [Tooltip("Empty gameobject that should be a child of the player. The player takes the movement direction from this gameobject to prevent unwanted movement.")]
     [SerializeField]private Transform orientation;
+    [SerializeField]private GameObject sidePlayer;
 
     public MovementState state;
 
@@ -162,6 +164,13 @@ public class PhysicMovementScript : MonoBehaviour
 
         if (Input.GetKeyUp(crouchKey)){
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Finish") {
+            Camera.main.GetComponent<CameraController>().ChangeCamera();
+            GameObject.Find("ObstacleHolder").GetComponent<ObstacleHolder>().DeleteObstacles();
         }
     }
 }
