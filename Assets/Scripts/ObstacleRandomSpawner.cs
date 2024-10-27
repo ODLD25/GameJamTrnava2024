@@ -6,17 +6,20 @@ public class ObstacleRandomSpawner : MonoBehaviour
     [SerializeField]private List<GameObject> obstacles = new List<GameObject>(); 
 
     [SerializeField, Range(0, 20)]private float minDistance;
-    [SerializeField, Range(20, 50)]private float maxDistance;
+    [SerializeField, Range(20, 100)]private float maxDistance;
     [SerializeField]private Transform startSpawnPos;
+    [SerializeField]private GameObject parent;
 
     private GameObject lastObstacle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lastObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Count - 1)], startSpawnPos.position, Quaternion.identity);
+        lastObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Count)], startSpawnPos.position, Quaternion.identity);
 
-        InvokeRepeating(nameof(SpawnObstacles), 3, 3);
+        InvokeRepeating(nameof(SpawnObstacles), 2, 2);
+
+        Time.timeScale = 5;
     }
 
     // Update is called once per frame
@@ -26,9 +29,22 @@ public class ObstacleRandomSpawner : MonoBehaviour
     }
 
     private void SpawnObstacles(){
+        if (gameObject.activeSelf == false) return;
+        int randomObsticle = Random.Range(0, obstacles.Count - 1);
+
+        
+        if (randomObsticle == 0){
+            float chance = Random.Range(0f, 1f);
+            Debug.Log(chance + " " + randomObsticle);
+
+            if (chance < 0.2f){
+                SpawnObstacles();
+            }
+        }
+
         float randomDistance =  Random.Range(minDistance, maxDistance);
         Vector2 spawnPos = new Vector3(lastObstacle.transform.position.x + randomDistance, lastObstacle.transform.position.y);
 
-        lastObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Count - 1)], spawnPos, Quaternion.identity);
+        lastObstacle = Instantiate(obstacles[randomObsticle], spawnPos, Quaternion.identity, parent.transform.parent);
     }
 }

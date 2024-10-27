@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -36,6 +37,9 @@ public class MovementScript2D : MonoBehaviour
     [SerializeField]private float jumpForce;
     [SerializeField]private LayerMask layerMask;
     [SerializeField]private bool grounded;
+
+    [Header("Obstacles")]
+    [SerializeField]private List<GameObject> obstaclesInRange = new List<GameObject>();
 
     [Header("References")]
     [SerializeField]private Rigidbody2D rb;
@@ -179,6 +183,18 @@ public class MovementScript2D : MonoBehaviour
 
         if (Input.GetKeyUp(crouchKey)){
             transform.localScale = new Vector2(transform.localScale.x, startYScale);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Obstacle" && !obstaclesInRange.Contains(other.gameObject)){
+            obstaclesInRange.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.tag == "Obstacle" && obstaclesInRange.Contains(other.gameObject)){
+            obstaclesInRange.Remove(other.gameObject);
         }
     }
 }
