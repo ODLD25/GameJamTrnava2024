@@ -121,7 +121,7 @@ public class CameraController : MonoBehaviour
             //Camera.main.transform.position = Vector3.zero;
             //Camera.main.transform.rotation = soulCameraRot;
             
-            soulPlayer.transform.position = new Vector3(-15f, 2f, 21f);
+            soulPlayer.transform.position = new Vector3(-15f + sidePlayer.transform.position.x, 2f, 21f);
 
             soulTimer = soulTime;
             
