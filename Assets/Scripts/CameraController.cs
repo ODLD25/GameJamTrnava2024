@@ -79,7 +79,7 @@ public class CameraController : MonoBehaviour
 
             playerManager.GetComponent<PlayerManager>().soulView = soulCamera;
         }
-        else {
+        else{
             soulCamera = true;
 
             Camera.main.transform.position = new Vector3(sidePlayer.transform.position.x, soulCameraPos.y, soulCameraPos.z);
