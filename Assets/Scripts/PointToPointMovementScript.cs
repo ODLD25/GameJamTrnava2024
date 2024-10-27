@@ -57,7 +57,6 @@ public class PointToPointMovementScript : MonoBehaviour
             lookAtRot = Quaternion.Euler(lookAtRot.x, lookAtRot.y, lookAtRot.z);
 
             transform.rotation = lookAtRot;
-            Debug.Log("A");
         }
         else if (customLookAt && target == pointB){
             //Vector3 lookAtPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -67,7 +66,6 @@ public class PointToPointMovementScript : MonoBehaviour
             lookAtRot = new Quaternion(lookAtRot.x, lookAtRot.y - 90, lookAtRot.z, 0);
 
             transform.rotation = lookAtRot;
-            Debug.Log("B");
         }
     }
 
