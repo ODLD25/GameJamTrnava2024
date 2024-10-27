@@ -10,12 +10,13 @@ public class ObstacleRandomSpawner : MonoBehaviour
     [SerializeField]private Transform startSpawnPos;
     [SerializeField]private GameObject parent;
 
-    private GameObject lastObstacle;
+    private Vector3 lastObstacle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lastObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Count)], startSpawnPos.position, Quaternion.identity);
+        Instantiate(obstacles[Random.Range(0, obstacles.Count)], startSpawnPos.position, Quaternion.identity);
+        lastObstacle = startSpawnPos.transform.position;
 
         InvokeRepeating(nameof(SpawnObstacles), 2, 2);
 
@@ -43,8 +44,9 @@ public class ObstacleRandomSpawner : MonoBehaviour
         }
 
         float randomDistance =  Random.Range(minDistance, maxDistance);
-        Vector2 spawnPos = new Vector3(lastObstacle.transform.position.x + randomDistance, lastObstacle.transform.position.y);
+        Vector2 spawnPos = new Vector3(lastObstacle.x + randomDistance, lastObstacle.y);
 
-        lastObstacle = Instantiate(obstacles[randomObsticle], spawnPos, Quaternion.identity, parent.transform.parent);
+        Instantiate(obstacles[randomObsticle], spawnPos, Quaternion.identity, parent.transform.parent);
+        lastObstacle = spawnPos;
     }
 }

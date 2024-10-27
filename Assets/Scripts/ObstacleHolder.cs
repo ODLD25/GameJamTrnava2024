@@ -1,16 +1,21 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ObstacleHolder : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    
+    [Header("Obstacles")]
+    [SerializeField]private List<GameObject> obstaclesInRange = new List<GameObject>();
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Obstacle" && !obstaclesInRange.Contains(other.gameObject)){
+            obstaclesInRange.Add(other.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.tag == "Obstacle" && obstaclesInRange.Contains(other.gameObject)){
+            obstaclesInRange.Remove(other.gameObject);
+        }
     }
 }
