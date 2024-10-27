@@ -11,13 +11,14 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]private GameObject health;
     [SerializeField]private GameObject gameOverMenu;
+    private float maxSanity;
 
     public bool soulView;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        maxSanity = sanity;
     }
 
     // Update is called once per frame
@@ -28,6 +29,10 @@ public class PlayerManager : MonoBehaviour
 
         if (sanity <= 0f){
             Die();
+        }
+
+        if (sanity > maxSanity){
+            sanity = maxSanity;
         }
     }
 

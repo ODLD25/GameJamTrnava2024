@@ -38,6 +38,11 @@ public class MovementScript2D : MonoBehaviour
     [SerializeField]private LayerMask layerMask;
     [SerializeField]private bool grounded;
 
+    [Header("Sounds")]
+    [SerializeField]private AudioClip jumpClip;
+    [SerializeField]private AudioSource walkAudioSource;
+    [SerializeField]private AudioSource jumpAudioSource;
+
     [Header("References")]
     [SerializeField]private Rigidbody2D rb;
     [SerializeField]private float playerHeight;
@@ -73,6 +78,13 @@ public class MovementScript2D : MonoBehaviour
         DragHandler();
         SpeedHandler();
         VelocityYHandler();
+
+        if (horizontalInput != 0f || verticalInput != 0f){
+            walkAudioSource.enabled = true;
+        }
+        else{
+            walkAudioSource.enabled = false;
+        }
     }
 
     private void FixedUpdate() {
@@ -146,6 +158,7 @@ public class MovementScript2D : MonoBehaviour
     private void Jump(){
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        jumpAudioSource.PlayOneShot(jumpClip);
     }
 
     private void GetInput(){

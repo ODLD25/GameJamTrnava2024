@@ -48,8 +48,6 @@ public class PhysicMovementScript : MonoBehaviour
 
     public enum MovementState{
         walking,
-        sprinting,
-        crouching,
         air
     }
 
@@ -67,7 +65,7 @@ public class PhysicMovementScript : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f);
 
-        StateHandler();
+        //StateHandler();
         GetInput();
         DragHandler();
         SpeedHandler();
@@ -78,7 +76,7 @@ public class PhysicMovementScript : MonoBehaviour
         Move();
     }
 
-    private void StateHandler(){
+    /*private void StateHandler(){
         if (Input.GetKey(crouchKey) && !sprinting){
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
@@ -94,7 +92,7 @@ public class PhysicMovementScript : MonoBehaviour
         else if (!grounded){
             state = MovementState.air;
         }
-    }
+    }*/
 
     private void Move(){
         Vector3 direction = orientation.forward * verticalInput + transform.right * horizontalInput;
@@ -131,8 +129,6 @@ public class PhysicMovementScript : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, maxYVelocity, rb.linearVelocity.z);
         }
     }
-
-    
 
     private void Jump(){
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
