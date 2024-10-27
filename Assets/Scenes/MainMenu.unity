@@ -929,8 +929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.96384, y: -18.325}
-  m_SizeDelta: {x: 569.9277, y: 36.65}
+  m_AnchoredPosition: {x: 252.37, y: -10.69}
+  m_SizeDelta: {x: 504.74, y: 21.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628169928
 MonoBehaviour:
@@ -952,9 +952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Skibidi Nizky Martinko : Main 2D Desighner, Sound Desighner
-
-'
+  m_text: 'Martin Palus: 2D Design + Sound Effects'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -981,8 +979,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1067,8 +1065,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 277.33, y: -195.27501}
-  m_SizeDelta: {x: 554.66, y: 18.33}
+  m_AnchoredPosition: {x: 168.245, y: -199.84999}
+  m_SizeDelta: {x: 336.49, y: 21.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683606603
 MonoBehaviour:
@@ -1090,7 +1088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Michal Flaska: Sound Desighner, Prezentation Maker'
+  m_text: 'Michal Flaska: Prezentacia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -1117,8 +1115,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1370,8 +1368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 260.69, y: -98.26501}
-  m_SizeDelta: {x: 521.38, y: 18.33}
+  m_AnchoredPosition: {x: 284.96384, y: -101.31999}
+  m_SizeDelta: {x: 569.9277, y: 42.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708428247
 MonoBehaviour:
@@ -1393,7 +1391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oliver Dubovsky: Main Scripter, Sound Desighner'
+  m_text: 'Oliver Dubovsky: Programovanie + Sound Effects'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -1420,8 +1418,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1700,7 +1698,7 @@ GameObject:
   - component: {fileID: 1014788824}
   - component: {fileID: 1014788823}
   m_Layer: 5
-  m_Name: MaxRepa
+  m_Name: MaximilianRepa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1722,8 +1720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.96384, y: -159.88501}
-  m_SizeDelta: {x: 569.9277, y: 36.65}
+  m_AnchoredPosition: {x: 265.31, y: -170.56999}
+  m_SizeDelta: {x: 530.62, y: 21.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014788823
 MonoBehaviour:
@@ -1745,7 +1743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Maximilian Repa: 2D Desighner, Vymeslil hlavne mechaniki hry, Game Desighner'
+  m_text: 'Maximilian Repa: 2D Grafika + Game Design'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -1772,8 +1770,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1998,7 +1996,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 42.178, y: -37.383}
-  m_SizeDelta: {x: -84.357, y: 204.44002}
+  m_SizeDelta: {x: -84.357, y: 210.54}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1149449956
 MonoBehaviour:
@@ -2341,8 +2339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199.675, y: -124.49501}
-  m_SizeDelta: {x: 399.35, y: 18.33}
+  m_AnchoredPosition: {x: 265.31, y: -141.29}
+  m_SizeDelta: {x: 530.62, y: 21.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365205615
 MonoBehaviour:
@@ -2364,7 +2362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Miroslav Mocko: Ma Viac Ako 18 Rokov'
+  m_text: 'Miroslav Mocko: Mentoring + Prezentovanie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -2391,8 +2389,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -3153,8 +3151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.96384, y: -62.875004}
-  m_SizeDelta: {x: 569.9277, y: 36.65}
+  m_AnchoredPosition: {x: 284.96384, y: -50.659996}
+  m_SizeDelta: {x: 569.9277, y: 42.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2059674515
 MonoBehaviour:
@@ -3176,7 +3174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eugen Durbalo: Main 3D Modeller, Scripter, Sound Desighner'
+  m_text: 'Eugen Durbalo: Main 3D Modely + Programovanie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5090aec8264411146a13792972f6c3da, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 5090aec8264411146a13792972f6c3da, type: 2}
@@ -3203,8 +3201,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
