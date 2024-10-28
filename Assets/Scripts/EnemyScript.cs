@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) < 10f)
+        if(Vector3.Distance(transform.position, player.transform.position) < 5f)
         {
             float takenHealth = damage * Time.deltaTime;
 

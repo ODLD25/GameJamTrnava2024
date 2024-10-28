@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]private GameObject health;
     [SerializeField]private GameObject gameOverMenu;
+
+    [SerializeField] private float score;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
     private float maxSanity;
 
     public bool soulView;
@@ -26,6 +32,9 @@ public class PlayerManager : MonoBehaviour
     {
         float width = Mathf.Clamp(sanity, 0f, 175f);
         health.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
+
+        score += Time.deltaTime;
+        scoreText.text = score.ToString();
 
         if (sanity <= 0f){
             Die();
