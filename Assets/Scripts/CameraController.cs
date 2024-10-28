@@ -27,7 +27,6 @@ public class CameraController : MonoBehaviour
     [Header("IDK")]
     [SerializeField]private GameObject camHolder;
     [SerializeField]private GameObject background;
-    [SerializeField]private GameObject road;
     [SerializeField]private float cameraMoveSpeed;
     private float soulTimer;
     public bool soulCamera;
@@ -69,8 +68,7 @@ public class CameraController : MonoBehaviour
         Vector3 backgroundPos = new Vector3(sidePlayer.transform.position.x, background.transform.position.y, background.transform.position.z);
         background.transform.position = backgroundPos;
 
-        Vector3 roadPos = new Vector3(sidePlayer.transform.position.x, road.transform.position.y, road.transform.position.z);
-        road.transform.position = roadPos;
+        
 
         if (soulCamera){
             GetMouseInput();
