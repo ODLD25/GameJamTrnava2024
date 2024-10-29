@@ -18,7 +18,7 @@ public class ObstacleHolder : MonoBehaviour
 
     public void DeleteObstacles(){
         foreach (GameObject obstacle in obstaclesInRange){
-            GameObject.Find("PlayerManager").GetComponent<PlayerManager>().sanity += 5;
+            GameObject.Find("PlayerManager").GetComponent<PlayerManager>().sanity += 10;
             Debug.Log("Destroy");
             Destroy(obstacle);
         }

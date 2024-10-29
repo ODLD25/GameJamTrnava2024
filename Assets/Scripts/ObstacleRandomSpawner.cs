@@ -19,8 +19,6 @@ public class ObstacleRandomSpawner : MonoBehaviour
         lastObstacle = startSpawnPos.transform.position;
 
         InvokeRepeating(nameof(SpawnObstacles), 2, 2);
-
-        Time.timeScale = 5;
     }
 
     // Update is called once per frame

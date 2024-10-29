@@ -26,6 +26,7 @@ public class PauseScript : MonoBehaviour
     public void OpenScene(int scene)
     {
         SceneManager.LoadScene(scene);
+        Time.timeScale = 1f;
     }
 
     public void Resume()
