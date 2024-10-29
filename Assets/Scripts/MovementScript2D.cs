@@ -162,7 +162,7 @@ public class MovementScript2D : MonoBehaviour
     }
 
     private void GetInput(){
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = 1f;
         verticalInput = Input.GetAxis("Vertical");
 
         if (horizontalInput < 0f){
@@ -178,13 +178,15 @@ public class MovementScript2D : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(sprintKey)){
+        /*if (Input.GetKeyDown(sprintKey)){
             sprinting = true;
         }
 
         if (Input.GetKeyUp(sprintKey)){
             sprinting = false;
-        }
+        }*/
+
+        sprinting = true;
 
         if (Input.GetKeyDown(crouchKey)){
             transform.localScale = new Vector2(transform.localScale.x, crouchYScale);

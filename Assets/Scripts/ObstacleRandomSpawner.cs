@@ -34,7 +34,6 @@ public class ObstacleRandomSpawner : MonoBehaviour
         
         if (randomObsticle == 0){
             float chance = Random.Range(0f, 1f);
-            Debug.Log(chance + " " + randomObsticle);
 
             if (chance < 0.2f){
                 SpawnObstacles();

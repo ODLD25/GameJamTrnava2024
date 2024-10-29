@@ -29,7 +29,6 @@ public class ObstacleHolder : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Obstacle" && !obstaclesInRange.Contains(other.gameObject)){
             obstaclesInRange.Add(other.gameObject);
-            Debug.Log("--");
         }
     }
 
