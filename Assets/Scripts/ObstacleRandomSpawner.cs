@@ -29,7 +29,7 @@ public class ObstacleRandomSpawner : MonoBehaviour
 
     private void SpawnObstacles(){
         if (gameObject.activeSelf == false) return;
-        int randomObsticle = Random.Range(0, obstacles.Count - 1);
+        int randomObsticle = Random.Range(0, obstacles.Count);
 
         
         if (randomObsticle == 0){

@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float yRot;
     [SerializeField]private float xRot;
 
-    [Header("IDK")]
+    [Header("References")]
     [SerializeField]private GameObject camHolder;
     [SerializeField]private GameObject background;
     [SerializeField]private float cameraMoveSpeed;
@@ -65,8 +65,8 @@ public class CameraController : MonoBehaviour
         Vector3 soulParentPos = new Vector3(sidePlayer.transform.position.x, soulParent.transform.position.y, soulParent.transform.position.z);   
         soulParent.transform.position = soulParentPos;
 
-        Vector3 backgroundPos = new Vector3(sidePlayer.transform.position.x, background.transform.position.y, background.transform.position.z);
-        background.transform.position = backgroundPos;
+        /*Vector3 backgroundPos = new Vector3(sidePlayer.transform.position.x, background.transform.position.y, background.transform.position.z);
+        background.transform.position = backgroundPos;*/
 
         
 

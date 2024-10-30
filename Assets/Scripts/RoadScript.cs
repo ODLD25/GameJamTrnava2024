@@ -10,7 +10,7 @@ public class RoadScript : MonoBehaviour
 
     private void Awake()
     {
-        player = Object.FindAnyObjectByType<MovementScript2D>().transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
