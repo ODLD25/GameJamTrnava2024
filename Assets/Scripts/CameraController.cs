@@ -36,6 +36,9 @@ public class CameraController : MonoBehaviour
         soulTimer = soulTime;
         soulParent.SetActive(false);
         playerManager = GameObject.Find("PlayerManager");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

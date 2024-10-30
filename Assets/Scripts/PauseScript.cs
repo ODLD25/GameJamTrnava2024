@@ -18,6 +18,9 @@ public class PauseScript : MonoBehaviour
 
     private void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
         pause = true;
@@ -25,6 +28,9 @@ public class PauseScript : MonoBehaviour
 
     public void OpenScene(int scene)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         SceneManager.LoadScene(scene);
         Time.timeScale = 1f;
     }
@@ -34,5 +40,8 @@ public class PauseScript : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
         pause = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
