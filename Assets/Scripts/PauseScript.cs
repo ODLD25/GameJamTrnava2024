@@ -9,7 +9,7 @@ public class PauseScript : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("PlayerManager").GetComponent<PlayerManager>().sanity > 0 || Input.GetKeyDown(KeyCode.C) && GameObject.Find("PlayerManager").GetComponent<PlayerManager>().sanity > 0)
         {
             if (pause) Resume();
             else Pause();
@@ -20,6 +20,8 @@ public class PauseScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        Camera.main.GetComponent<CameraController>().lockedCam = true;
 
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
@@ -40,6 +42,8 @@ public class PauseScript : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
         pause = false;
+
+        Camera.main.GetComponent<CameraController>().lockedCam = false;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8009153181810964018}
   - component: {fileID: 4688971454329201775}
   - component: {fileID: 8492938170848840701}
-  - component: {fileID: 1232242647305636692}
   - component: {fileID: 8563845441890544980}
+  - component: {fileID: 4014189094896405708}
   m_Layer: 0
   m_Name: Coffe
   m_TagString: Untagged
@@ -112,7 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1232242647305636692
+--- !u!114 &8563845441890544980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489765568341357029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7cc4d404ad110479e31a8b4232615e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 50
+--- !u!61 &4014189094896405708
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,16 +171,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.03125, y: 1.53125}
   m_EdgeRadius: 0
---- !u!114 &8563845441890544980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5489765568341357029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7cc4d404ad110479e31a8b4232615e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 50

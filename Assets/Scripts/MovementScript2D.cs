@@ -188,13 +188,13 @@ public class MovementScript2D : MonoBehaviour
 
         sprinting = true;
 
-        if (Input.GetKeyDown(crouchKey)){
+        /*if (Input.GetKeyDown(crouchKey)){
             transform.localScale = new Vector2(transform.localScale.x, crouchYScale);
             rb.AddForce(Vector2.down * 5f, ForceMode2D.Impulse);
         }
 
         if (Input.GetKeyUp(crouchKey)){
             transform.localScale = new Vector2(transform.localScale.x, startYScale);
-        }
+        }*/
     }
 }

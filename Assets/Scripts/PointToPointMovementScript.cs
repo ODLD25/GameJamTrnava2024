@@ -1,3 +1,5 @@
+using Unity.Burst;
+using Unity.Collections;
 using UnityEngine;
 
 public class PointToPointMovementScript : MonoBehaviour

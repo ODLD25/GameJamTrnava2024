@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private float score;
     [SerializeField] private TextMeshProUGUI scoreText;
+    private GameObject dontDestroyOnLoad;
 
     private float maxSanity;
 
@@ -25,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         maxSanity = sanity;
+        dontDestroyOnLoad = GameObject.Find("DontDestroyOnLoad");
     }
 
     // Update is called once per frame
@@ -36,6 +38,8 @@ public class PlayerManager : MonoBehaviour
         score += Time.deltaTime;
         scoreText.text = score.ToString();
 
+        if (Time.frameCount % 5 == 0) dontDestroyOnLoad.GetComponent<DontDestroyOnLoadScript>().score = score;
+
         if (sanity <= 0f){
             Die();
         }
@@ -46,6 +50,13 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void Die(){
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        dontDestroyOnLoad.GetComponent<DontDestroyOnLoadScript>().score = score;
+
+        Camera.main.GetComponent<CameraController>().lockedCam = true;
+
         Time.timeScale = 0f;
         gameOverMenu.SetActive(true);
     }

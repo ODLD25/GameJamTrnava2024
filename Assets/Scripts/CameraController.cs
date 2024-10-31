@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float xRot;
 
     [Header("References")]
+    public bool lockedCam;
     [SerializeField]private GameObject camHolder;
     [SerializeField]private GameObject background;
     [SerializeField]private float cameraMoveSpeed;
@@ -52,7 +53,7 @@ public class CameraController : MonoBehaviour
     {
         if (soulCamera) {soulTimer -= Time.deltaTime;}
 
-        if (Input.GetKeyDown(KeyCode.Tab) || soulTimer <= 0f){
+        if (Input.GetKeyDown(KeyCode.Tab) && !lockedCam || soulTimer <= 0f){
             ChangeCamera();
         }
         

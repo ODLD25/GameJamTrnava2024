@@ -47,11 +47,11 @@ public class FlyingMovementScript : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetKey(upKey)){
-            rb.AddForce(Vector3.up * speed, ForceMode.Force);
+            rb.AddForce(Vector3.up * speed * Time.deltaTime, ForceMode.Force);
         }
 
         if (Input.GetKey(downKey)){
-            rb.AddForce(Vector3.down * speed, ForceMode.Force);
+            rb.AddForce(Vector3.down * speed * Time.deltaTime, ForceMode.Force);
         }
     }
 
