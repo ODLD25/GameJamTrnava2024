@@ -3,7 +3,8 @@ using UnityEngine;
 public class RoadScript : MonoBehaviour
 {
     private static Transform player;
-    private static GameObject prevRoad;
+    private static Vector3 prevRoad;
+    private static GameObject prevRoadObject;
     private static GameObject road;
 
     [SerializeField] private GameObject roadPrefab;
@@ -17,7 +18,7 @@ public class RoadScript : MonoBehaviour
     {
         if(prevRoad == null && gameObject.name == "Floor2D")
         {
-            prevRoad = gameObject;
+            prevRoad = gameObject.transform.position;
         }
         else
         {
@@ -27,17 +28,22 @@ public class RoadScript : MonoBehaviour
 
     private void Update()
     {
+        if (player == null){
+            player = Camera.main.GetComponent<CameraController>().sidePlayer.transform;
+        }
+
         if((player.position.x - transform.position.x) > 100f)
         {
-            print("need to spawn new road");
-            print(prevRoad.name);
-            print(road.name);
-            if (prevRoad == gameObject)
+            print("need to spawn new road" + prevRoadObject.name/* + " " + road.name*/);
+            if (prevRoadObject == gameObject)
             {
-                prevRoad = road;
+                prevRoadObject = road;
+                prevRoad = road.transform.position;
                 road = Instantiate(roadPrefab);
 
-                road.transform.position = new Vector3(prevRoad.transform.position.x + 100f, prevRoad.transform.position.y, prevRoad.transform.position.z);
+                road.transform.position = new Vector3(prevRoad.x + 100f, prevRoad.y, prevRoad.z);
+
+                Debug.Log(road.name);
 
                 Destroy(gameObject);
             }

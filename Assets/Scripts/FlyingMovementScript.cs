@@ -4,6 +4,7 @@ public class FlyingMovementScript : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField]private float speed;
+    [SerializeField]private float verticalSpeed;
     [SerializeField]private float maxYVelocity;
 
     [Header("Input")]
@@ -47,11 +48,11 @@ public class FlyingMovementScript : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetKey(upKey)){
-            rb.AddForce(Vector3.up * speed * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(Vector3.up * verticalSpeed * Time.deltaTime, ForceMode.Force);
         }
 
         if (Input.GetKey(downKey)){
-            rb.AddForce(Vector3.down * speed * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(Vector3.down * verticalSpeed * Time.deltaTime, ForceMode.Force);
         }
     }
 

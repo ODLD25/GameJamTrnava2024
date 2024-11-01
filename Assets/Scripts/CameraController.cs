@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]private Vector3 sideViewCameraPos;
     [SerializeField]private Quaternion sideViewCameraRot;
     [SerializeField]private GameObject sideParent;
-    [SerializeField]private GameObject sidePlayer;
+    public GameObject sidePlayer;
 
     [Header("Soul View")]
     [SerializeField]private Vector3 soulCameraPos;

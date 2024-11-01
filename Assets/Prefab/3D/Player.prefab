@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  verticalSpeed: 1500
   maxYVelocity: 30
   upKey: 101
   downKey: 113
